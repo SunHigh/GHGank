@@ -5,15 +5,16 @@
     android:layout_height="match_parent"
     tools:context=".ui.activitys.MainActivity">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/main_fragment"
+    <com.example.sh.ghgank.utils.UnScrolledViewPager
+        android:id="@+id/id_main_viewPager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+        android:layout_height="match_parent"></com.example.sh.ghgank.utils.UnScrolledViewPager>
     <RadioGroup
         android:layout_width="match_parent"
-        android:layout_height="175px"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_alignBottom="@id/main_fragment"
+        android:paddingBottom="5sp"
+        android:layout_alignBottom="@id/id_main_viewPager"
         >
 
         <RadioButton
