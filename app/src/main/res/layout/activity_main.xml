@@ -10,12 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"></com.example.sh.ghgank.utils.UnScrolledViewPager>
 
-    <View
-        android:layout_below="@id/id_main_viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#444"
-        />
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

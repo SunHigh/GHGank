@@ -21,30 +21,29 @@ import java.util.List;
 public class HomeFragment extends Fragment{
     private TabLayout mTablayout;
     private ViewPager mViewpager;
-    private String[] mTitile = {"福利","Android","Ios","休息视频","拓展资源","瞎推荐"};
+    private String[] mTitile = {"福利","Android","IOS","休息视频","拓展资源","瞎推荐"};
     private List<Fragment> mFragment;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        mViewpager = (ViewPager) view.findViewById(R.id.id_home_viewpager);
-        mTablayout = (TabLayout) view.findViewById(R.id.tab_layout);
-        initView();
+        initView(view);
         mTablayout.setupWithViewPager(mViewpager);
         initEvent();
         return view;
     }
 
-    private void initView() {
+    private void initView(View view) {
 
-
+        mViewpager = (ViewPager) view.findViewById(R.id.id_home_viewpager);
+        mTablayout = (TabLayout) view.findViewById(R.id.tab_layout);
         mFragment = new ArrayList<>();
         //        动态添加Fragment
         for (String title : mTitile){
             mFragment.add(Main_HomeFragment.getInstance(title));
         }
 
-
+        mViewpager.setOffscreenPageLimit(4);
         mViewpager.setAdapter(new FragmentPagerAdapter(getFragmentManager()) {
             @Override
             public CharSequence getPageTitle(int position) {
