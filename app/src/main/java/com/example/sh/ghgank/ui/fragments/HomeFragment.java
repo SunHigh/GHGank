@@ -44,7 +44,8 @@ public class HomeFragment extends Fragment{
         }
 
         mViewpager.setOffscreenPageLimit(4);
-        mViewpager.setAdapter(new FragmentPagerAdapter(getFragmentManager()) {
+        //这里使用getChildFragmentManager可以解决TabLayout切换不自动回弹的问题
+        mViewpager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
             @Override
             public CharSequence getPageTitle(int position) {
                 return mTitile[position];

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.example.sh.ghgank.R;
 import com.example.sh.ghgank.ui.fragments.HomeFragment;
@@ -16,8 +17,13 @@ import com.example.sh.ghgank.ui.fragments.MeFragment;
 import com.example.sh.ghgank.ui.fragments.MessageFragment;
 import com.example.sh.ghgank.utils.UnScrolledViewPager;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import cn.bmob.v3.Bmob;
+import cn.bmob.v3.datatype.BmobFile;
+import cn.bmob.v3.listener.UploadFileListener;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -34,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Bmob.initialize(this,"3c427d2fe9e8a2de522054d704fc86c3");
         initView();
         initEvent();
     }
@@ -88,4 +95,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
     }
+
 }
