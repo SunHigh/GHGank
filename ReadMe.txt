@@ -1,1 +1,0 @@
-can we do a world£¿
